@@ -1,0 +1,84 @@
+CREATE DATABASE wap_db;
+GRANT ALL ON wap_db.* TO 'dynamix'@'localhost' IDENTIFIED BY 'zap';
+GRANT ALL ON wap_db.* TO 'dynamix'@'127.0.0.1' IDENTIFIED BY 'zap';
+
+======================================================================
+
+CREATE TABLE employee (
+	emID VARCHAR(20) NOT NULL,
+	emPassword VARCHAR(20) NOT NULL,
+	emName VARCHAR(20) NOT NULL,
+	emPhone VARCHAR(20) NOT NULL,
+	emEmail VARCHAR(20) NOT NULL,
+	emPos VARCHAR(50) NOT NULL,
+	PRIMARY KEY(emID),
+	INDEX(emEmail)
+) ENGINE=InnoDB CHARSET=utf8;
+
+=====================================================================
+
+CREATE TABLE patient (
+	patID VARCHAR(20) NOT NULL,
+	patPassword VARCHAR(20) NOT NULL,
+	patName VARCHAR(20) NOT NULL,
+	patPhone VARCHAR(20) NOT NULL,
+	patEmail VARCHAR(20) NOT NULL,
+	PRIMARY KEY(patID),
+	INDEX(patEmail)
+) ENGINE=InnoDB CHARSET=utf8;
+
+=====================================================================
+
+CREATE TABLE diagnosis (
+	diaID VARCHAR(20) NOT NULL,
+	diaName VARCHAR(20) NOT NULL,
+	diaSym VARCHAR(300) NOT NULL,
+	diaMed VARCHAR(300) NOT NULL,
+	patID VARCHAR(20) NOT NULL,
+	PRIMARY KEY(diaID)
+) ENGINE=InnoDB CHARSET=utf8;
+
+ALTER TABLE diagnosis
+ADD FOREIGN KEY(patID) REFERENCES patient(patID);
+
+=====================================================================
+
+CREATE TABLE medicine (
+	medID VARCHAR(20) NOT NULL,
+	medName VARCHAR(30) NOT NULL,
+	medCon VARCHAR(300) NOT NULL,
+	medPrice DECIMAL(10,2) NOT NULL,
+	PRIMARY KEY(medID)
+) ENGINE=InnoDB CHARSET=utf8;
+
+=====================================================================
+
+INSERT INTO employee (emID, emPassword, emName, emPhone, emEmail, emPos) VALUES
+('E001', 'epw001', 'Jason Ng', '0101237893', 'jasonng@gmail.com', 'doctor'),
+('E002', 'epw002', 'Olivia Trom', '01110987760', 'oliviatrom@gmail.com', 'nurse'),
+('E003', 'epw003', 'Alice Lao', '0134567655', 'alicelao@gmail.com', 'nurse'),
+('E004', 'epw004', 'Bob Nyzaya', '0140982271', 'bobnyzaya@gmail.com', 'administrator');
+
+======================================================================
+
+INSERT INTO patient (patID, patPassword, patName, patPhone, patEmail) VALUES
+('P001', 'ppw001', 'Marcus Tan', '0187654321', 'marcustan@gmail.com'),
+('P002', 'ppw002', 'Amanda Seed', '0125436789', 'amandaseed@gmail.com'),
+('P003', 'ppw003', 'Nigel Wong', '0102928383', 'nigelwong@gmail.com'),
+('P004', 'ppw004', 'Lorence Bao', '0192103933', 'lorencebao@gmail.com');
+
+=======================================================================
+
+INSERT INTO diagnosis (diaID, diaName, diaSym, diaMed, patID) VALUES
+('D001', 'diabetes', 'increased hunger, increased thirst, weight loss, frequent urination, blurry vision, extreme fatigue, sores that do not heal', 'Acarbose(Precose), miglitol(Glyset), Metformin(Glucophage), Linagliptin(Tradjenta), saxagliptin(Onglyza), and sitagliptin(Januvia)', 'P002'),
+('D002', 'high cholesterol', 'No particular symptoms', 'atorvastatin(Lipitor), fluvastatin(Lescol), rosuvastatin(Crestor), simvastatin(Zocor), niacin', 'P003'),
+('D003', 'Influenza(Flu)', 'fever* or feeling feverish/chills, cough, sore throat, runny or stuffy nose, muscle or body aches, headaches, fatigue(tiredness), some people may have vomitting and diarrhea', 'antiviral drugs', 'P004');
+
+=======================================================================
+
+INSERT INTO medicine (medID, medName, medCon, medPrice) VALUES
+('M001', 'Acarbose', 'alpha-glucosidase inhibitors', '17.04'),
+('M002', 'Metformin', 'biguanides', '10.46'),
+('M003', 'Sitagliptin', 'dipeptidyl peptidase-4 (DPP-4) inhibitors', '460.80');
+
+=======================================================================
