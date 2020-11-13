@@ -1,0 +1,170 @@
+body {
+    font-family: Helvetica, sans-serif;
+  }
+
+  .logo{
+    width: 200px;
+    height: 200px;
+    margin-left: 20px;
+  }
+
+  .headerImage{
+    background-image: url("https://elixiraid.com/wp-content/uploads/2016/09/Hospital-Management-System-1-1024x328.png");
+    width:1015px;
+    height:300px;
+    margin-left: 240px;
+    top: 0;
+  }
+
+  .pageTitle{
+    font-size: 70px;
+    font-weight: bold;
+    color: #242020;
+    margin-left: 10px;
+  }
+
+  /*Side navigation bar css */
+
+  .sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #005A9E;
+    overflow-x: hidden;
+  }
+
+  .sidenav a {
+    padding: 6px 8px 6px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #BEBEBE;
+    display: block;
+  }
+
+  .sidenav a:hover {
+    color: #F1F1F1;
+  }
+
+  .btnLogout{
+    background-color: #10466d;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    margin-left: 70px;
+    border: aqua;
+    border-radius: 4px;
+    cursor: pointer;
+    float: center;
+  }
+
+  .btnLogout:hover{
+    background-color: #FFFFFF;
+    color: #242020;
+  }
+
+  /* Right side of website */
+
+  .main {
+    margin-left: 250px; /* Same as the width of the sidenav */
+    font-size: 15px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+
+  /*Table CSS*/
+
+  table{
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  table, td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+  }
+
+  td, th {
+    padding: 15px;
+  }
+
+  tr:hover {
+    background-color: #F5F5F5;
+  }
+
+  .btnDelete {
+    background-color: #005A9E;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: aqua;
+    border-radius: 4px;
+    cursor: pointer;
+    float: center;
+  }
+
+  .btnDelete:hover {
+    background-color: #FFFFFF;
+    color: #242020;
+  }
+
+  /*Form CSS*/
+
+  * {
+    box-sizing: border-box;
+  }
+
+  input[type=text], input[type=password], select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+
+  .btnSubmit {
+    background-color: #005A9E;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+
+  .btnSubmit:hover {
+    background-color: #053E69;
+  }
+
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  /*Left side of the form*/
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+
+  /*Right side of the form*/
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
