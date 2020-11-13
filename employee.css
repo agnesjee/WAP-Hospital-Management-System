@@ -122,7 +122,7 @@ body {
     color: #242020;
   }
 
-  /*Form CSS except log out button*/
+  /*Form CSS*/
 
   * {
     box-sizing: border-box;
@@ -157,12 +157,14 @@ body {
     padding: 20px;
   }
 
+   /*Left side of the form*/
   .col-25 {
     float: left;
     width: 25%;
     margin-top: 6px;
   }
 
+   /*Right side of the form*/
   .col-75 {
     float: left;
     width: 75%;
