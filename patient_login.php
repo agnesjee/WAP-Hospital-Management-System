@@ -14,7 +14,7 @@ unset($_SESSION['account']); //Logout current user
     header("Location: patient_login.php");
     return;
   }
-  else if (empty($_POST['patPassword']) $_POST['patPassword'] == " " ) {
+  else if (empty($_POST['patPassword']) || $_POST['patPassword'] == " " ) {
     $_SESSION['error'] = "Please enter password.";
     header("Location: patient_login.php");
     return;
