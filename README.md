@@ -19,5 +19,5 @@ Prerequistes to preview the project:
 - Have XAMPP installed on your laptop
 - Copy this project to "htdocs" folder in the XAMPP folder
 - Remember to start the Apache and MySQL from the XAMPP Control Panel
-- Access localhost/phpMyAdmin and create a database named "wap_db" based on the code given in "database.txt"
+- Access "localhost/phpMyAdmin" on your browser and create a database named "wap_db" based on the code given in "database.txt"
 - Then you are able to view the web application from your browser by typing "localhost/folder-name"
